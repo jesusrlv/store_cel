@@ -32,7 +32,12 @@
       }
     </style>
 
+    <?php
     
+    $id_catalogo = $_REQUEST['id'];
+    require('query/query_ini.php');
+    ?>
+
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
@@ -47,21 +52,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Inicio</a>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Catálogo 1</a>
+            <a class="nav-link" href="#">Carcazas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catálogo 2</a>
+            <a class="nav-link" href="#">Micas protectoras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Catálogo 2</a>
+            <a class="nav-link" href="#">Pilas y cargadores</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li> -->
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
@@ -74,7 +76,7 @@
 
 <main>
 
-<h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Catálogo <span class="text-muted">Productos</span></h2>
+<h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Catálogo <span class="text-muted">Php Product</span></h2>
 
 
 
