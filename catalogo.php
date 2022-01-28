@@ -46,23 +46,20 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Tienda en línea</a>
+      <a class="navbar-brand" href="#"><i class="bi bi-phone"></i> Tienda en línea</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Carcazas</a>
+            <a class="nav-link active" href="#"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Micas protectoras</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pilas y cargadores</a>
+            <a class="nav-link" href="#"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
           </li>
         </ul>
         <form class="d-flex">
