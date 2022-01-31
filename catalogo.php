@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Título tienda en línea · Inicio</title>
+    <title>Título tienda en línea · Catálogo</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -36,6 +36,7 @@
     
     $id_catalogo = $_REQUEST['id'];
     require('query/query_ini.php');
+    // require('query/query_catalogo.php');
     ?>
 
     <!-- Custom styles for this template -->
@@ -73,7 +74,7 @@
 
 <main>
 
-<h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Catálogo <span class="text-muted">Php Product</span></h2>
+<h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Catálogo <span class="text-muted">Protectores de celular</span></h2>
 
 
 
@@ -84,65 +85,19 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
+    
 
-      <div class="col-lg-4">
-        <div class="card text-center text-secondary bg-warning" style="width: 100%;">
-          <img src="assets/brand/img/cel1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Producto 1</h5>
-            <p class="card-text">Descripción del producto</p>
-            <hr>
-            <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <div class="card text-center text-secondary bg-warning" style="width: 100%;">
-          <img src="assets/brand/img/cel2.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">Producto 2</h5>
-            <p class="card-text">Descripción del producto</p>
-            <hr>
-            <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <div class="card text-center text-secondary bg-warning" style="width: 100%;">
-          <img src="assets/brand/img/cel3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">Producto 3</h5>
-            <p class="card-text">Descripción del producto</p>
-            <hr>
-            <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <div class="card text-center text-secondary bg-warning" style="width: 100%;">
-          <img src="assets/brand/img/cel4.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">Producto 4</h5>
-            <p class="card-text">Descripción del producto</p>
-            <hr>
-            <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <div class="card text-center text-secondary bg-warning" style="width: 100%;">
-          <img src="assets/brand/img/cel5.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-          <h5 class="card-title">Producto 5</h5>
-            <p class="card-text">Descripción del producto</p>
-            <hr>
-            <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      
-    </div><!-- /.row -->
+    <!-- consultas productos -->
+
+    <div class="row">
+      <?php
+        require('query/query_catalogo.php');
+      ?>
+    
+
+    </div><!--row-->
+
+    <!-- consultas productos -->
 
 
     <!-- START THE FEATURETTES -->
