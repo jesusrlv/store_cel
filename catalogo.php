@@ -75,9 +75,6 @@
 <main>
 
 <h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Catálogo <span class="text-muted">Protectores de celular</span></h2>
-
-
-
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -85,21 +82,13 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    
-
     <!-- consultas productos -->
-
     <div class="row">
       <?php
         require('query/query_catalogo.php');
       ?>
-    
-
     </div><!--row-->
-
     <!-- consultas productos -->
-
-
     <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
