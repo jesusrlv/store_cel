@@ -38,7 +38,7 @@ include('qconn/qc.php');
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+              <button type="button" class="btn btn-primary" onclick="mensajeAgregado();agregarCarrito();" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
             </div>
           </div>
         </div>

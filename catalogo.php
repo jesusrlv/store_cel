@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
+    <script src="query/compra.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,20 +54,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalogo.php?id=1"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
+            </li>
+          </ul>
+        <!-- <form class="d-flex"> -->
+          <!-- <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"> -->
+          <button class="btn btn-outline-light" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart-plus"></i> Carrito de compras</button>
+        <!-- </form> -->
       </div>
     </div>
   </nav>
@@ -145,6 +146,7 @@
     <!-- <p>&copy; 2022 RedDeploy &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
     <p>&copy; 2022 RedDeploy</p>
   </footer>
+  
 </main>
 
 
@@ -177,3 +179,18 @@
   </div>
 </div>
 <!-- modal de descripción del producto -->
+
+<?php
+  require('canvas.php');
+?>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  function mensajeAgregado(){
+      swal("Correcto", "Tu producto ha sido agregado al carrito de compras", "success");
+
+    }
+   
+</script>
+

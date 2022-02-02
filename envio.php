@@ -53,16 +53,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
-          </li>
-        </ul>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalogo.php?id=1"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
+            </li>
+          </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Buscar</button>
