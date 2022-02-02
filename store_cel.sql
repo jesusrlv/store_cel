@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-01-2022 a las 21:25:54
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.3.1
+-- Tiempo de generación: 02-02-2022 a las 07:31:34
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -56,8 +55,19 @@ CREATE TABLE `envios` (
   `fecha_llegada` date NOT NULL,
   `venta_general` int(11) NOT NULL,
   `id_envio` int(11) NOT NULL COMMENT 'id de la persona que envio',
-  `costo_envio` int(11) NOT NULL
+  `costo_envio` int(11) NOT NULL,
+  `codigo_envio_interno` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `codigo_envio_externo` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `envios`
+--
+
+INSERT INTO `envios` (`id`, `fecha_registro`, `compania`, `fecha_llegada`, `venta_general`, `id_envio`, `costo_envio`, `codigo_envio_interno`, `codigo_envio_externo`) VALUES
+(1, '2022-02-01', 'Aeropostal', '2022-02-04', 5000, 1, 75, 'C4R6TR433', 'AER01022022'),
+(2, '2022-02-02', 'DHL', '2022-02-04', 7000, 2, 90, 'C4R6TR477', 'C4R6TR00'),
+(3, '2022-02-03', 'Paquete express', '2022-02-05', 4000, 3, 0, 'ZZR6TR433', 'VDC4R6TR');
 
 -- --------------------------------------------------------
 
@@ -82,6 +92,7 @@ CREATE TABLE `modelo` (
 CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(170) COLLATE utf8_unicode_ci NOT NULL,
   `precio` int(11) NOT NULL,
   `imagen` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `cantidad` int(11) NOT NULL,
@@ -90,6 +101,23 @@ CREATE TABLE `producto` (
   `codigo` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `catalogo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `cantidad`, `modelo`, `total_vendido`, `codigo`, `catalogo`) VALUES
+(1, 'Protector Samsung S30/S21', 'Descripción del producto 01', 100, 'producto_01.jpg', 10, 1, 0, 'protector1', 1),
+(2, 'Protector iPhone XS Max', 'Descripción del producto 02', 300, 'producto_02.jpg', 10, 2, 0, 'protector2', 1),
+(3, 'iPhone 11 (6.1)', 'Descripción del producto 03', 400, 'producto_03.jpg', 30, 1, 0, 'protector3', 1),
+(4, 'Mate 20 Lite', 'Descripción del producto 04', 150, 'producto_04.jpg', 10, 1, 0, 'protector4', 1),
+(5, 'P40 Lite Nova 6 SE', 'Descripción del producto 05', 200, 'producto_05.jpg', 60, 1, 0, 'protector4', 1),
+(6, 'Huawei Y9S', 'Descripción del producto 06', 300, 'producto_06.jpg', 10, 1, 0, 'protector5', 1),
+(7, 'A51', 'Descripción del producto 07', 350, 'producto_07.jpg', 10, 1, 0, 'protector6', 1),
+(8, 'iPhone 7/8 Plus', 'Descripción del producto 08', 600, 'producto_08.jpg', 10, 1, 0, 'protector7', 1),
+(9, 'producto_09.jpg', 'Descripción del producto 09', 100, 'producto_09.jpg', 10, 1, 0, 'protector8', 1),
+(10, 'iPhone XS Max', 'Descripción del producto 010', 500, 'producto_010.jpg', 10, 1, 0, 'protector9', 1),
+(11, 'Samsung A10S', 'Descripción del producto 011', 100, 'producto_011.jpg', 10, 1, 0, 'protector10', 1);
 
 -- --------------------------------------------------------
 
@@ -117,7 +145,9 @@ CREATE TABLE `venta_gral` (
   `fecha_venta` date NOT NULL,
   `id_producto` int(11) NOT NULL,
   `nombre` int(11) NOT NULL,
-  `tarjeta` int(11) NOT NULL
+  `tarjeta` int(11) NOT NULL,
+  `clave_rastreo_int` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `clave_rastreo_ext` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -192,7 +222,7 @@ ALTER TABLE `catalogo`
 -- AUTO_INCREMENT de la tabla `envios`
 --
 ALTER TABLE `envios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
@@ -204,7 +234,7 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usr`
