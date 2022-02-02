@@ -32,8 +32,8 @@ include('qconn/qc.php');
             <td colspan="5" class="table-danger">Sin datos de envío</td>
             
             </tr>
-        </tbody>';
-                
+        </tbody>
+        ';
     
         }
         

@@ -57,10 +57,10 @@
             <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
+            <a class="nav-link" href="#"><i class="bi bi-shield-fill-check"></i> Carcazas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
+            <a class="nav-link active" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -115,11 +115,14 @@
                         require('query/query_rastreo.php');
                     ?>
                 </table>
+                
             </div>
         </div>
     </div>
     <!-- consultas productos -->
     <!-- START THE FEATURETTES -->
+    <input type="text" value="<?php echo $resultado_rows ?>" id="valorrow" hidden>
+    
 
     <hr class="featurette-divider">
     <h2 class="mb-5 bg-light p-5 text-center featurette-heading">Nuevos <span class="text-muted">Productos</span></h2>
@@ -207,3 +210,18 @@
   </div>
 </div>
 <!-- modal de descripción del producto -->
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  var x = document.getElementById("valorrow").value;
+    if (x == 1){
+      // alert("El producto está en proceso de envío");
+      swal("Código localizado", "Tu envío se encuentra en camino", "success");
+      // $("#myModal").modal("show:true");
+
+    }
+    if (x == 0){
+      // alert("El producto no tiene código de rastreo");
+      swal("Error!", "No se encuentra el envío en el registro", "error");
+    }
+</script>
