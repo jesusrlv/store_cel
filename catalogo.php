@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Título tienda en línea · Catálogo</title>
+    <title>Tienda en línea · Catálogo</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -188,9 +188,21 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
   function mensajeAgregado(){
-      swal("Correcto", "Tu producto ha sido agregado al carrito de compras", "success");
+      // swal("Correcto", "Tu producto ha sido agregado al carrito de compras", "success");
 
-    }
+      // document.getElementById('offcanvasRight').show;
+      swal({
+        title: "Correcto",
+        text: "Tu producto ha sido agregado al carrito de compras",
+        type: "success"
+        }).then(function() {
+
+          var bsOffcanvas2 = new bootstrap.Offcanvas(offcanvasRight);
+          bsOffcanvas2.show();
+        
+      });
+      
+  }
    
 </script>
 

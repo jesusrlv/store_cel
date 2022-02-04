@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Título tienda en línea · Catálogo</title>
+    <title>Tienda en línea · Envíos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -63,10 +63,9 @@
               <a class="nav-link active" href="envio.php"><i class="bi bi-geo-fill"></i> Rastreo de envíos</a>
             </li>
           </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+          <!-- <a href="catalogo.php" class="btn btn-outline-light" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart-plus"></i> Carrito de compras</a> -->
+          <a href="catalogo.php?id=1" class="btn btn-outline-light" type="buton" ><i class="bi bi-cart-plus"></i> Ir a Carrito de compras</a>
+
       </div>
     </div>
   </nav>
@@ -225,3 +224,7 @@
       swal("Error!", "No se encuentra el envío en el registro", "error");
     }
 </script>
+
+<?php
+  require('canvas.php');
+?>
