@@ -9,6 +9,10 @@ include('qconn/qc.php');
     // $row_sql_catalogo = $resultado_sql_catalogo->fetch_assoc();
 
     while($row_sql_catalogo = $resultado_sql_catalogo->fetch_assoc()){
+      $x1 = $row_sql_catalogo['nombre'];
+      $x2 = $row_sql_catalogo['id'];
+      // echo $x1;
+      // echo $x2;
         echo '<div class="col-lg-4">
         <div class="card text-center text-secondary bg-warning" style="width: 100%;">
           <img src="assets/brand/img/catalogo/'.$row_sql_catalogo['imagen'].'" class="card-img-top" style="max-width: 500px; max-height: 375px; object-fit: cover; object-position:right; background-repeat: no-repeat;" alt="...">
@@ -38,7 +42,7 @@ include('qconn/qc.php');
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" onclick="mensajeAgregado();agregarCarrito();" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+              <button type="button" class="btn btn-primary" onclick="mensajeAgregado();return agregarCarrito('.$x1.'.value);" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
             </div>
           </div>
         </div>

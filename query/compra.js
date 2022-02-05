@@ -1,6 +1,10 @@
-function agregarCarrito(){
-
-    document.getElementById('compracarrito').innerHTML+='<div class="input-group"><input type="text" class="form-control" placeholder="Redacta la pregunta" aria-label="Username" aria-describedby="basic-addon1"><span class="input-group-text" id="basic-addon1"><i class="bi bi-question-circle-fill"></i></span></div>';
+function agregarCarrito(x1){
+    
+    var x1 = document.btn.x1.value=x1;
+    
+    // var y1 = y;
+    // console.log('x1');
+    document.getElementById('compracarrito').innerHTML+='<div class="input-group mb-1"><input type="text" class="form-control" placeholder="'+x1+'" aria-label="Username" aria-describedby="basic-addon1" value=""><button type="button" class="btn btn-danger input-group-text"><i class="bi bi-x-circle-fill"></i></button></div>';
 
 }
 
