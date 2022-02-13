@@ -10,7 +10,7 @@ include('qconn/qc.php');
 
     while($row_sql_catalogo = $resultado_sql_catalogo->fetch_assoc()){
       // $x1 = $row_sql_catalogo['nombre'];
-    
+      $x1 = 1;
       $x2 = $row_sql_catalogo['nombre'];
       // echo $x1;
       // echo $x2;
