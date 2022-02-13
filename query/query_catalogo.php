@@ -9,8 +9,9 @@ include('qconn/qc.php');
     // $row_sql_catalogo = $resultado_sql_catalogo->fetch_assoc();
 
     while($row_sql_catalogo = $resultado_sql_catalogo->fetch_assoc()){
-      $x1 = $row_sql_catalogo['nombre'];
-      $x2 = $row_sql_catalogo['id'];
+      // $x1 = $row_sql_catalogo['nombre'];
+    
+      $x2 = $row_sql_catalogo['nombre'];
       // echo $x1;
       // echo $x2;
         echo '<div class="col-lg-4">
@@ -41,8 +42,11 @@ include('qconn/qc.php');
               <p class="mt-1"><strong>Precio:</strong> $'.$row_sql_catalogo['precio'].'</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary" onclick="mensajeAgregado();return agregarCarrito('.$x1.'.value);" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>';
+              ?>
+              <button type="button" class="btn btn-primary" onclick="mensajeAgregado(); agregarCarrito(<?php echo $row_sql_catalogo['id']?>,'<?php echo $x2?>',<?php echo $row_sql_catalogo['precio']?>);" data-bs-dismiss="modal"><i class="bi bi-cart-plus"></i> Agregar al carrito</button>
+            <?
+              echo'
             </div>
           </div>
         </div>
