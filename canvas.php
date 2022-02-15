@@ -14,6 +14,7 @@
         <div class="row-12">
             <form action="query/compras.php" method="POST" class="border-bottom">
                 <p id="compracarrito"></p>
+                <hr class="w-100 justify-aligment-center">
                 <button type="submit" class="btn btn-primary w-100"><i class="bi bi-cart-plus"></i> Comprar</button>                    
             </form>
 
