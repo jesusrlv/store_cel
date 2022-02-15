@@ -31,3 +31,11 @@
     
   </div>
 </div>
+
+<script>
+  var inputs = document.getElementById("offcanvasRight").getElementsById("contadorId");
+  alert("Valor recibido: " + inputs);
+</script>
+
+<!-- ejemplos de cards -->
+<!-- https://bbbootstrap.com/snippets/bootstrap-5-simple-information-card-85881560 -->
