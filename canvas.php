@@ -12,7 +12,7 @@
   <div class="offcanvas-body border-bottom">
   
         <div class="row-12">
-            <form action="query/compras.php" method="POST" class="border-bottom">
+            <form action="query/compras.php" method="POST" class="border-bottom" onchange="cambioInput()">
                 <p id="compracarrito"></p>
                 <hr class="w-100 justify-aligment-center">
                 <button type="submit" class="btn btn-primary w-100"><i class="bi bi-cart-plus"></i> Comprar</button>                    
@@ -33,8 +33,10 @@
 </div>
 
 <script>
-  var inputs = document.getElementById("offcanvasRight").getElementsById("contadorId");
-  alert("Valor recibido: " + inputs);
+  function cambioInput(){
+    var inputs = document.getElementById("offcanvasRight").getElementsById("contadorId");
+    alert("Valor recibido: " + inputs);
+  }
 </script>
 
 <!-- ejemplos de cards -->
