@@ -18,3 +18,8 @@ function borrarCompras(contador){
     let cont = contador;
     document.getElementById("limpiarcompra"+cont).innerHTML = "";
 }
+
+// accesosadmin.html
+// línea 473 | código para hacer un for de los inputs
+
+// document.querySelectorAll('input').forEach(element => element.disabled = true);
