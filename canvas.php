@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="col-12">
-                    <strong>Total: </strong> $$$
+                    <strong>Total: </strong><span id="totalSpans"></span>
                 </div>
                 
                 <div class="4">
@@ -53,8 +53,8 @@
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-credit-card-2-back"></i> Tarjeta para pago</small></label>
               <div class="input-group">
-                <input type="text" class="form-control w-70" id="tarjetaNum" maxlength ="16" placeholder="XXXX-XXXX-XXXX-XXXX" onkeypress="ValidaSoloNumeros()">
-                <input type="text" class="form-control w-30" id="tipoTarjeta" readonly>
+                <input type="text" class="form-control" style="width:57%" id="tarjetaNum" maxlength ="16" placeholder="XXXX-XXXX-XXXX-XXXX" onkeypress="ValidaSoloNumeros()">
+                <input type="text" class="form-control" style="width:43%" width="28" id="tipoTarjeta" readonly>
               </div>
               <input type="text" class="form-control w-100" id="formGroupExampleInput" placeholder="Nombre en tarjeta...">
               
