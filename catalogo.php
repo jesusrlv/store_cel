@@ -66,7 +66,11 @@
           </ul>
         <!-- <form class="d-flex"> -->
           <!-- <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"> -->
-          <button class="btn btn-outline-light" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart-plus"></i> Carrito de compras</button>
+          <button class="btn btn-outline-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart-plus"></i> Carrito de compras
+          <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
+    
+    <span class="visually-hidden">unread messages</span>
+  </span></button>
         <!-- </form> -->
       </div>
     </div>
