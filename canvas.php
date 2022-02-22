@@ -15,20 +15,24 @@
           <form action="query/compras.php" method="POST" class="" onchange="cambioInput()">
                 <p id="compracarrito"></p>
                 <!-- <hr class="w-100 justify-aligment-center"> -->
-                                    
             <!-- </form> -->
-            <button class="btn btn-primary w-100" type="button" id="btncerrar" onclick="cambiarHidden()"><i class="bi bi-cart-plus"></i> Pagar carrito</button>
-
-            <div class="col-12 mt-2">
-                <strong>Número de productos: </strong><span id="contadorInputs"></span>
-                </div>
+            <button class="btn btn-primary w-100 mb-1" type="button" id="btncerrar" onclick="cambiarHidden()"><i class="bi bi-cart-plus"></i> Pagar carrito</button>
                 
                 <div class="col-12">
+                  <div class="alert alert-primary" role="alert">
+                    <strong>Número de productos: </strong><span id="contadorInputs"></span>
+                    <hr>
                     <strong>Total: </strong><span id="totalSpans"></span>
+                  </div>
                 </div>
-                
-                <div class="4">
-            </div>
+                  
+                <!-- <div class="col-12 mt-0">
+                  <div class="alert alert-primary" role="alert">
+                    <strong>Total: </strong><span id="totalSpans"></span>
+                  </div>
+                </div> -->
+                <!-- <div class="4">
+                </div> -->
         </div>
 
         <div class="row-12 border-top mt-3" id="cambiohidden">
@@ -83,7 +87,8 @@
   document.getElementById('cambiohidden').style.visibility = 'hidden';
 function cambiarHidden(){
   document.getElementById('cambiohidden').style.visibility = 'visible';
-  document.getElementById('btncerrar').style.visibility = 'hidden';
+  // document.getElementById('btncerrar').style.visibility = 'hidden';
+  document.getElementById('btncerrar').disabled = true;
   
   // https://www.w3schools.com/jsref/prop_style_visibility.asp
 }
