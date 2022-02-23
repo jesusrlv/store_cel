@@ -12,7 +12,7 @@
   <div class="offcanvas-body border-bottom">
   
         <div class="row-12">
-          <form action="query/compras.php" method="POST" class="" onchange="cambioInput()">
+          <form action="query/q_guardar_datos.php" method="POST" class="" onchange="cambioInput()">
                 <p id="compracarrito"></p>
                 <!-- <hr class="w-100 justify-aligment-center"> -->
             <!-- </form> -->
@@ -20,9 +20,9 @@
                 
                 <div class="col-12">
                   <div class="alert alert-primary" role="alert">
-                    <strong>Número de productos: </strong><span id="contadorInputs"></span>
+                    <strong>Número de productos: </strong><span id="contadorInputs" name="num_prod"></span>
                     <hr>
-                    <strong>Total: </strong><span id="totalSpans"></span>
+                    <strong>Total: </strong><span id="totalSpans" name="total_precio"></span>
                   </div>
                 </div>
                   
@@ -40,32 +40,32 @@
           <div class="col mt-2">
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-person-circle"></i> Nombre completo</small></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre...">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre..." name="nombre">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-card-heading"></i> Dirección</small></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Dirección...">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Dirección..." name="direccion">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-phone"></i> Teléfono</small></label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Teléfono..." onkeypress="ValidaSoloNumeros()">
+              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Teléfono..." name="tel" onkeypress="ValidaSoloNumeros()">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-envelope-fill"></i> Correo electrónico</small></label>
-              <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Correo electrónico...">
+              <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Correo electrónico..." name="email">
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-credit-card-2-back"></i> Tarjeta para pago</small></label>
               <div class="input-group">
-                <input type="text" class="form-control" style="width:57%" id="tarjetaNum" maxlength ="16" placeholder="XXXX-XXXX-XXXX-XXXX" onkeypress="ValidaSoloNumeros()">
+                <input type="text" class="form-control" style="width:57%" id="tarjetaNum" maxlength ="16" name="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" onkeypress="ValidaSoloNumeros()">
                 <input type="text" class="form-control" style="width:43%" width="28" id="tipoTarjeta" readonly>
               </div>
-              <input type="text" class="form-control w-100" id="formGroupExampleInput" placeholder="Nombre en tarjeta...">
+              <input type="text" class="form-control w-100" id="formGroupExampleInput" placeholder="Nombre en tarjeta..." name="nombre_tarjeta">
               
               <div class="input-group">
-              <input type="text" class="form-control w-40" id="formGroupExampleInput" placeholder="Expira Mes..." maxlength="2" onkeypress="ValidaSoloNumeros()">
-              <input type="text" class="form-control w-40" id="formGroupExampleInput" placeholder="Expira Año..." maxlength="2" onkeypress="ValidaSoloNumeros()">
-              <input type="password" class="form-control w-20" id="formGroupExampleInput" placeholder="NIP..." maxlength="3" onkeypress="ValidaSoloNumeros()">
+              <input type="text" class="form-control w-40" id="formGroupExampleInput" placeholder="Expira Mes..." name="expira_mes" maxlength="2" onkeypress="ValidaSoloNumeros()">
+              <input type="text" class="form-control w-40" id="formGroupExampleInput" placeholder="Expira Año..." name="expira_annio" maxlength="2" onkeypress="ValidaSoloNumeros()">
+              <input type="password" class="form-control w-20" id="formGroupExampleInput" placeholder="NIP..." maxlength="3" name="ccc" onkeypress="ValidaSoloNumeros()">
               </div>
             </div>
           </div>
