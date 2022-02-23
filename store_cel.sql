@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-02-2022 a las 07:31:34
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 23-02-2022 a las 22:05:10
+-- Versión del servidor: 10.1.37-MariaDB
+-- Versión de PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -143,9 +144,15 @@ CREATE TABLE `venta_gral` (
   `cantidad` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
   `fecha_venta` date NOT NULL,
-  `id_producto` int(11) NOT NULL,
   `nombre` int(11) NOT NULL,
+  `direccion` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `telefono` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `tarjeta` int(11) NOT NULL,
+  `nombre_tarjeta` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `expira_mes` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `expira_annio` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `nip` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   `clave_rastreo_int` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `clave_rastreo_ext` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -159,7 +166,8 @@ CREATE TABLE `venta_gral` (
 CREATE TABLE `venta_individual` (
   `id` int(11) NOT NULL,
   `producto` int(11) NOT NULL,
-  `fecha_venta` date NOT NULL
+  `fecha_venta` date NOT NULL,
+  `venta_gral` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
