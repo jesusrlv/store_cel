@@ -2,6 +2,10 @@ var contador = 0;
 
 function agregarCarrito(x1,nombre,costo){
     
+    // var inputs = document.getElementById('contadorInputs').value;
+    // var precioTotal = document.getElementById('total_precio').value;
+    
+
     contador++;
     
     let x = x1;
@@ -18,6 +22,9 @@ function agregarCarrito(x1,nombre,costo){
     // alert(valor);
     document.getElementById('contadorInputs').textContent = valor;
     document.getElementById('notificacionBadge').textContent = valor;
+
+    // document.getElementById('inputsval').textContent = divs;
+    // document.getElementById('totalprice').textContent = valor;
     
     // costo total de la compra
     // https://es.stackoverflow.com/questions/254096/c%C3%B3mo-sumar-los-precios-en-etiquetas-span

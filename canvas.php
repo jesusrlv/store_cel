@@ -12,7 +12,8 @@
   <div class="offcanvas-body border-bottom">
   
         <div class="row-12">
-          <form action="query/q_guardar_datos.php" method="POST" class="" onchange="cambioInput()">
+          <!-- <form action="query/q_guardar_datos.php" method="POST" class="" onchange="cambioInput()"> -->
+          <form action="query/q_guardar_datos.php" method="POST" class="">
                 <p id="compracarrito"></p>
                 <!-- <hr class="w-100 justify-aligment-center"> -->
             <!-- </form> -->
@@ -24,7 +25,15 @@
                     <hr>
                     <strong>Total: </strong><span id="totalSpans" name="total_precio"></span>
                   </div>
+                  <!-- <input type="text" id="inputsval" name="num_prod">
+                  <input type="text" id="totalprice" name="total_precio"> -->
                 </div>
+
+                <script>
+                  
+                </script>
+
+               
                   
                 <!-- <div class="col-12 mt-0">
                   <div class="alert alert-primary" role="alert">
