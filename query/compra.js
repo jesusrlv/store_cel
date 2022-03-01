@@ -15,16 +15,20 @@ function agregarCarrito(x1,nombre,costo){
     // alert("Valor recibido: " + contador);
     // var y1 = y;
     // console.log('x1');
-    document.getElementById('compracarrito').innerHTML+='<div id="limpiarcompra'+contador+'" class="input-group mb-1"><input name="nombreproducto'+contador+'" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="'+y+'" READONLY><input name="valor" id="producto" type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="$'+precio+'" READONLY><input name="valor" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="'+x+'" id="contadorId" hidden><button type="button" class="btn btn-danger input-group-text" onclick="borrarCompras('+contador+')"><i class="bi bi-x-circle-fill"></i></button></div>';
+
+    // modificación en contador name="nombreproducto'+contador+' por name="nombreproducto[]"
+    document.getElementById('compracarrito').innerHTML+='<div id="limpiarcompra'+contador+'" class="input-group mb-1"><input name="nombreproducto[]" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="'+y+'" READONLY><input name="valor[]" id="producto" type="text" class="form-control text-center" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="$'+precio+'" READONLY><input name="id[]" type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" value="'+x+'" id="contadorId" hidden><button type="button" class="btn btn-danger input-group-text" onclick="borrarCompras('+contador+')"><i class="bi bi-x-circle-fill"></i></button></div>';
 
     var divs = document.querySelectorAll('input[id="producto"]');
     var valor = divs.length;
     // alert(valor);
     document.getElementById('contadorInputs').textContent = valor;
     document.getElementById('notificacionBadge').textContent = valor;
+    // CHECAR PORQUE NO FUNCIONA
+    // document.getElementById('inputsval').innerHTML = valor;
 
-    // document.getElementById('inputsval').textContent = divs;
-    // document.getElementById('totalprice').textContent = valor;
+    document.getElementById('inputsval').textContent = divs;
+    document.getElementById('totalprice').textContent = valor;
     
     // costo total de la compra
     // https://es.stackoverflow.com/questions/254096/c%C3%B3mo-sumar-los-precios-en-etiquetas-span
@@ -79,6 +83,8 @@ function borrarCompras(contador){
     // alert(valor);
     document.getElementById('contadorInputs').textContent = valor;  
     document.getElementById('notificacionBadge').textContent = valor;
+    // CHECAR PORQUE NO FUNCIONA
+    document.getElementById('inputsval').textContent = valor;
 
 
     // CODIGO JALANDO total de la compra

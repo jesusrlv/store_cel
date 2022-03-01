@@ -25,12 +25,20 @@
                     <hr>
                     <strong>Total: </strong><span id="totalSpans" name="total_precio"></span>
                   </div>
-                  <!-- <input type="text" id="inputsval" name="num_prod">
-                  <input type="text" id="totalprice" name="total_precio"> -->
+                    <!-- <input type="text" id="inputsval" name="num_prod"> -->
+                    <input name="num_prod" id="inputsval" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" READONLY>
+                    <input type="text" id="totalprice" name="total_precio">
                 </div>
 
                 <script>
-                  
+                  // function valores(){
+                  //   var x = document.getElementById('contadorInputs').value;
+                  //   var y = document.getElementById('totalSpans').value;
+
+                  //   document.getElementById('inputsval').value = x;
+                  //   document.getElementById('totalprice').value = y;
+                  // }
+
                 </script>
 
                
