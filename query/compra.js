@@ -24,11 +24,8 @@ function agregarCarrito(x1,nombre,costo){
     // alert(valor);
     document.getElementById('contadorInputs').textContent = valor;
     document.getElementById('notificacionBadge').textContent = valor;
-    // CHECAR PORQUE NO FUNCIONA
-    // document.getElementById('inputsval').innerHTML = valor;
 
-    document.getElementById('inputsval').textContent = divs;
-    document.getElementById('totalprice').textContent = valor;
+    document.getElementById('totalprice').value = valor;
     
     // costo total de la compra
     // https://es.stackoverflow.com/questions/254096/c%C3%B3mo-sumar-los-precios-en-etiquetas-span
@@ -66,6 +63,9 @@ for (var i = 0; i < costoProducto.length; i++) {
 }
 // costoTotal = parseFloat(costoTotal.replace(/(?!-)[^0-9.]/g,''));
 document.getElementById('totalSpans').innerHTML = `$${costoTotal} Mx.N.`
+// hidden value
+document.getElementById('inputsval').value = costoTotal;
+
 
 // alert(costoTotal);
 
@@ -83,8 +83,8 @@ function borrarCompras(contador){
     // alert(valor);
     document.getElementById('contadorInputs').textContent = valor;  
     document.getElementById('notificacionBadge').textContent = valor;
-    // CHECAR PORQUE NO FUNCIONA
-    document.getElementById('inputsval').textContent = valor;
+    // hidden value
+    document.getElementById('totalprice').value = valor;
 
 
     // CODIGO JALANDO total de la compra
@@ -98,6 +98,9 @@ function borrarCompras(contador){
     }
     // costoTotal = parseFloat(costoTotal.replace(/(?!-)[^0-9.]/g,''));
     document.getElementById('totalSpans').innerHTML = `$${costoTotal} Mx.N.`
+    // hidden value
+    document.getElementById('inputsval').value = costoTotal;
+
 
     // alert(costoTotal);
 
