@@ -26,8 +26,8 @@
                     <strong>Total: </strong><span id="totalSpans" name=""></span>
                   </div>
                     <!-- <input type="text" id="inputsval" name="num_prod"> -->
-                    <input  name="total_precio" id="inputsval" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" READONLY>
-                    <input  name="num_prod" id="totalprice" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" READONLY>
+                    <input hidden name="total_precio" id="inputsval" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" READONLY>
+                    <input hidden name="num_prod" id="totalprice" type="text" class="form-control w-50" placeholder="" aria-label="Username" aria-describedby="basic-addon1" READONLY>
                     <!-- <input type="text" id="totalprice" name="total_precio"> -->
                 </div>
 

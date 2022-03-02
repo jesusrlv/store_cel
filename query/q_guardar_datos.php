@@ -67,27 +67,15 @@ if($resultado_general){
     else{
     echo 'No se registró la actividad';
     }
-// echo $fecha_sistema;
-// echo $cantidad;
-// echo $total_precio;
-// echo $nombre_completo;
-// echo $direccion;
-// echo $telefono;
-// echo $email;
-// echo $tarjeta;
-// echo $nombre_tarjeta;
-// echo $expira_mes;
-// echo $expira_annio;
-// echo $nip;
-// echo $codigo;
-
-// echo $nombreproducto;
-
 
 //  end of if
 
+
+
 // https://laracasts.com/index.php/index.php/discuss/channels/general-discussion/how-to-add-multiple-same-name-input-fields-in-one-form-into-database
 // https://www.sourcecodester.com/tutorials/php/13495/php-multiple-form-inputs.html
+
+// https://programacion.net/articulo/carrito_de_la_compra_integrado_con_paypal_mediante_php_1975
 ?>
 </body>
 </html>
