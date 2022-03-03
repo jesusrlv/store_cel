@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-02-2022 a las 22:05:10
+-- Tiempo de generación: 03-03-2022 a las 22:26:48
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -68,7 +68,8 @@ CREATE TABLE `envios` (
 INSERT INTO `envios` (`id`, `fecha_registro`, `compania`, `fecha_llegada`, `venta_general`, `id_envio`, `costo_envio`, `codigo_envio_interno`, `codigo_envio_externo`) VALUES
 (1, '2022-02-01', 'Aeropostal', '2022-02-04', 5000, 1, 75, 'C4R6TR433', 'AER01022022'),
 (2, '2022-02-02', 'DHL', '2022-02-04', 7000, 2, 90, 'C4R6TR477', 'C4R6TR00'),
-(3, '2022-02-03', 'Paquete express', '2022-02-05', 4000, 3, 0, 'ZZR6TR433', 'VDC4R6TR');
+(3, '2022-02-03', 'Paquete express', '2022-02-05', 4000, 3, 0, 'ZZR6TR433', 'VDC4R6TR'),
+(4, '2022-03-02', 'DHL', '2022-03-03', 1, 2, 1000, 't3jxopyg7', '334-998-65');
 
 -- --------------------------------------------------------
 
@@ -133,6 +134,13 @@ CREATE TABLE `usr` (
   `perfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `usr`
+--
+
+INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`) VALUES
+(1, 'admin', '123456789', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -148,14 +156,26 @@ CREATE TABLE `venta_gral` (
   `direccion` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `telefono` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `tarjeta` int(11) NOT NULL,
+  `tarjeta` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `nombre_tarjeta` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `expira_mes` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
   `expira_annio` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
-  `nip` varchar(3) COLLATE utf8_unicode_ci NOT NULL,
   `clave_rastreo_int` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `clave_rastreo_ext` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `clave_rastreo_ext` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `venta_gral`
+--
+
+INSERT INTO `venta_gral` (`id`, `cantidad`, `precio`, `fecha_venta`, `nombre`, `direccion`, `telefono`, `email`, `tarjeta`, `nombre_tarjeta`, `expira_mes`, `expira_annio`, `clave_rastreo_int`, `clave_rastreo_ext`) VALUES
+(1, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', '0', 'Jesus R', '24', '09', '8f3ak2ug8', NULL),
+(2, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '99x8t9pvr', NULL),
+(3, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', 'v5b9wrogc', NULL),
+(4, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 'vudtv03fq', NULL),
+(5, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5cew07b0n', NULL),
+(6, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '77lz5ocv5', NULL),
+(7, 5, 800, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 't3jxopyg7', NULL);
 
 -- --------------------------------------------------------
 
@@ -165,10 +185,69 @@ CREATE TABLE `venta_gral` (
 
 CREATE TABLE `venta_individual` (
   `id` int(11) NOT NULL,
-  `producto` int(11) NOT NULL,
+  `producto` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `fecha_venta` date NOT NULL,
-  `venta_gral` int(11) NOT NULL
+  `venta_gral` varchar(9) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `venta_individual`
+--
+
+INSERT INTO `venta_individual` (`id`, `producto`, `fecha_venta`, `venta_gral`) VALUES
+(1, '0', '0000-00-00', '0'),
+(2, '0', '0000-00-00', '0'),
+(3, '0', '0000-00-00', '0'),
+(4, '0', '2022-03-02', '0'),
+(5, '0', '2022-03-02', '0'),
+(6, '0', '2022-03-02', '0'),
+(7, '0', '2022-03-02', '0'),
+(8, '0', '2022-03-02', '0'),
+(9, '0', '2022-03-02', '0'),
+(10, '0', '2022-03-02', '0'),
+(11, '0', '2022-03-02', '0'),
+(12, '0', '2022-03-02', '0'),
+(13, '0', '2022-03-02', '0'),
+(14, '0', '2022-03-02', '0'),
+(15, '0', '2022-03-02', '0'),
+(16, '0', '2022-03-02', '1'),
+(17, '0', '2022-03-02', '0'),
+(18, 'Protector iPhone XS Max', '2022-03-02', '0'),
+(19, 'Protector iPhone XS Max', '2022-03-02', '0'),
+(20, 'Protector iPhone XS Max', '2022-03-02', 'g9vz8mhh3'),
+(21, 'Protector iPhone XS Max', '2022-03-02', 'b2mqoil4w'),
+(22, 'Protector iPhone XS Max', '2022-03-02', 'b2mqoil4w'),
+(23, 'Mate 20 Lite', '2022-03-02', 'b2mqoil4w'),
+(24, 'Samsung A10S', '2022-03-02', 'b2mqoil4w'),
+(25, 'Protector iPhone XS Max', '2022-03-02', '8f3ak2ug8'),
+(26, 'Protector iPhone XS Max', '2022-03-02', '8f3ak2ug8'),
+(27, 'Mate 20 Lite', '2022-03-02', '8f3ak2ug8'),
+(28, 'Samsung A10S', '2022-03-02', '8f3ak2ug8'),
+(29, 'Protector iPhone XS Max', '2022-03-02', '99x8t9pvr'),
+(30, 'Protector iPhone XS Max', '2022-03-02', '99x8t9pvr'),
+(31, 'Mate 20 Lite', '2022-03-02', '99x8t9pvr'),
+(32, 'Samsung A10S', '2022-03-02', '99x8t9pvr'),
+(33, 'Protector iPhone XS Max', '2022-03-02', 'v5b9wrogc'),
+(34, 'Protector iPhone XS Max', '2022-03-02', 'v5b9wrogc'),
+(35, 'Mate 20 Lite', '2022-03-02', 'v5b9wrogc'),
+(36, 'Samsung A10S', '2022-03-02', 'v5b9wrogc'),
+(37, 'Mate 20 Lite', '2022-03-02', 'vudtv03fq'),
+(38, 'Mate 20 Lite', '2022-03-02', 'vudtv03fq'),
+(39, 'Protector Samsung S30/S21', '2022-03-02', 'vudtv03fq'),
+(40, 'Protector iPhone XS Max', '2022-03-02', 'vudtv03fq'),
+(41, 'Mate 20 Lite', '2022-03-02', '5cew07b0n'),
+(42, 'Mate 20 Lite', '2022-03-02', '5cew07b0n'),
+(43, 'Protector Samsung S30/S21', '2022-03-02', '5cew07b0n'),
+(44, 'Protector iPhone XS Max', '2022-03-02', '5cew07b0n'),
+(45, 'Mate 20 Lite', '2022-03-02', '77lz5ocv5'),
+(46, 'Mate 20 Lite', '2022-03-02', '77lz5ocv5'),
+(47, 'Protector Samsung S30/S21', '2022-03-02', '77lz5ocv5'),
+(48, 'Protector iPhone XS Max', '2022-03-02', '77lz5ocv5'),
+(49, 'Mate 20 Lite', '2022-03-02', 't3jxopyg7'),
+(50, 'Mate 20 Lite', '2022-03-02', 't3jxopyg7'),
+(51, 'Protector Samsung S30/S21', '2022-03-02', 't3jxopyg7'),
+(52, 'Protector iPhone XS Max', '2022-03-02', 't3jxopyg7'),
+(53, 'Protector Samsung S30/S21', '2022-03-02', 't3jxopyg7');
 
 --
 -- Índices para tablas volcadas
@@ -230,7 +309,7 @@ ALTER TABLE `catalogo`
 -- AUTO_INCREMENT de la tabla `envios`
 --
 ALTER TABLE `envios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
@@ -248,19 +327,19 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_gral`
 --
 ALTER TABLE `venta_gral`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_individual`
 --
 ALTER TABLE `venta_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
