@@ -81,7 +81,7 @@ $(document).ready(function() {
                         title: 'Usuario correcto',
                         text: 'Credenciales correctas',
                         footer: 'VENTAS</a>'
-                    }).then(function(){window.location='../actividad_calificar.php';});
+                    }).then(function(){window.location='dashboard.php';});
                 }
                 else
                 {
