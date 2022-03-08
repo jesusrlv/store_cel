@@ -42,7 +42,10 @@
 
     </header>
 <body>
+
 <main class="justify-content-center">
+
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="bi bi-phone"></i> Sistema de ventas</a>
@@ -60,6 +63,9 @@
             <li class="nav-item">
               <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Envíos</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="envio.php"><i class="bi bi-cloud-plus-fill"></i> Catálogo</a>
+            </li>
           </ul>
           <!-- <a href="catalogo.php" class="btn btn-outline-light" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-cart-plus"></i> Carrito de compras</a> -->
           <a href="catalogo.php?id=1" class="btn btn-dark" type="buton" ><i class="bi bi-door-open-fill"></i> Salir</a>
@@ -69,15 +75,19 @@
   </nav>
 
   
-  
+
   
     </main>
 
-    <div class="container">
-    <div class="row g-0">
+    <!-- <div class="container-fluid">
+      <h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-geo-fill"></i> Rastreo <span class="text-muted">de envíos</span></h2>
+    </div> -->
+
+    <div class="container marketing">
+    <div class="row g-0 text-center">
          
         <div class="col-lg-6">
-            <div class="card text-white bg-dark mb-3" style="width: 95%;height:12rem;">
+            <div class="card text-white mb-3" style="width: 95%;height:12rem; background-color: #212529;" id="hOver">
                 <!-- <div class="card-header">Header</div> -->
                     <div class="card-body p-5">
                         <h5 class="card-title"><i class="bi bi-receipt-cutoff"></i> Ventas</h5>
@@ -87,7 +97,7 @@
         </div>
          
         <div class="col-lg-6">
-            <div class="card text-white bg-dark mb-3" style="width: 95%;height:12rem;">
+            <div class="card text-white bg-dark mb-3" style="width: 95%;height:12rem;" id="hOver">
                 <!-- <div class="card-header">Header</div> -->
                     <div class="card-body p-5">
                         <h5 class="card-title"><i class="bi bi-geo-fill"></i> Envíos</h5>
@@ -97,7 +107,7 @@
         </div>
          
         <div class="col-lg-6">
-            <div class="card text-white bg-dark mb-3" style="width: 95%;height:12rem;">
+            <div class="card text-white bg-dark mb-3" style="width: 95%;height:12rem;" id="hOver">
                 <!-- <div class="card-header">Header</div> -->
                     <div class="card-body p-5">
                         <h5 class="card-title"><i class="bi bi-cloud-plus-fill"></i> Cargar catálogo</h5>
@@ -107,7 +117,7 @@
         </div>
          
         <div class="col-lg-6">
-            <div class="card text-white bg-primary mb-3" style="width: 95%;height:12rem;">
+            <div class="card text-white bg-primary mb-3" style="width: 95%;height:12rem;" id="hOver">
                 <!-- <div class="card-header">Header</div> -->
                     <div class="card-body p-5">
                         <h5 class="card-title"><i class="bi bi-door-open-fill"></i> Salir</h5>
@@ -118,7 +128,15 @@
 
      </div>
     </div>
-
+<style>
+  #hOver:hover {
+    border: 2px solid red;
+    border-color:red;
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    transform: scale(1.05);
+    background-color: red;
+}
+</style>
     
 </body>
 </html>
