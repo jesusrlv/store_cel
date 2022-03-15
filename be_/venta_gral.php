@@ -70,74 +70,67 @@
 </header>
 
 <main>
-  <h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Sistema <span class="text-muted">de Ventas</span></h2>
+  <h2 class="mb-5 bg-light p-5 text-center featurette-heading" style="margin:18px;"><i class="bi bi-phone"></i> Venta <span class="text-muted">General</span></h2>
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
+<? include('../query/query_ventas.php'); ?>
+  <div class="container marketing mt-5 border-bottom">
 
-  <div class="container marketing mt-5">
+  <div class="input-group mb-4 w-50">
+    <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+    <input type="text" class="form-control" placeholder="Filtrado" aria-label="Filtrado" aria-describedby="basic-addon1" id="myInput">
+  </div>
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row g-4">
+  <hr>
 
-      <div class="col-lg-6">
-        <div class="card text-center text-light bg-dark" style="width: 100%;" id="hOver">
-          <!-- <img src="assets/brand/img/cel4.jpg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-receipt-cutoff"></i> Ventas</h5>
-            <p class="card-text">Revisar las ventas realizadas en el sistema.</p>
-            <a href="venta_gral.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-6">
-        <div class="card text-center text-light bg-dark" style="width: 100%;" id="hOver">
-          <!-- <img src="assets/brand/img/cel6.jpg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-geo-fill"></i> Envíos</h5>
-            <p class="card-text">Revisar el estatus de los envíos por paquetería.</p>
-            <a href="rastreo_envios.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-6">
-        <div class="card text-center text-light bg-dark" style="width: 100%;" id="hOver">
-          <!-- <img src="assets/brand/img/cel5.jpg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-cloud-plus-fill"></i> Cargar catálogo</h5>
-            <p class="card-text">Cargar catálogo de productos en el sistema.</p>
-            <a href="revision_catalogo.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-6">
-        <div class="card text-center text-light bg-primary" style="width: 100%;" id="hOver">
-          <!-- <img src="assets/brand/img/cel5.jpg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h5 class="card-title"><i class="bi bi-door-open-fill"></i> Salir</h5>
-            <p class="card-text">Salir del sistema.</p>
-            <a href="prcd/sort.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
-          </div>
-        </div>
-      </div><!-- /.col-lg-4 -->
-      
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
-    
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
+    <!-- table ventas -->
+    <table class="table  table-light table-striped mb-3 table-hover align-middle">
+      <thead class="text-center table-dark align-middle">
+        <tr>
+          <th scope="col" class="h6"><small>#</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-calendar2-week-fill"></i> Fecha venta</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-123"></i> Cantidad</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-tag"></i> Precio</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-person-circle"></i> Nombre</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-card-text"></i> Dirección</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-telephone"></i> Teléfono</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-envelope"></i> Email</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-upc-scan"></i> Clave interna de rastreo</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-truck"></i> Rastreo paquetería</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-info-circle"></i> Detalles</small></th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        
+        <?php
+        $x = 0;
+          while($row_sql = $resultado_sql->fetch_assoc()){
+            $x++;
+            echo'<tr>';
+            echo'<td>'.$x.'</td>';
+            echo'<td>'.$row_sql['fecha_venta'].'</td>';
+            echo'<td class="text-center">'.$row_sql['cantidad'].'</td>';
+            echo'<td class="text-center">'.$row_sql['precio'].'</td>';
+            echo'<td class="text-center">'.$row_sql['nombre'].'</td>';
+            echo'<td>'.$row_sql['direccion'].'</td>';
+            echo'<td class="text-center">'.$row_sql['telefono'].'</td>';
+            echo'<td class="text-center">'.$row_sql['email'].'</td>';
+            echo'<td class="text-center">'.$row_sql['clave_rastreo_int'].'</td>';
+            echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
+            echo'<td class="text-center"><a href="" type="button" class="btn btn-primary btn-sm"><i class="bi bi-clipboard"></i> Detalles</a></td>';
+            echo'</tr>';
+          }
+        ?>
+      </tbody>
+    </table>
+    <!-- table ventas -->
 
   </div><!-- /.container -->
 
-
   <!-- FOOTER -->
-  <footer class="container">
+  <footer class="container mt-5">
     <p class="float-end"><a href="#">Regresar arriba</a></p>
     <!-- <p>&copy; 2022 RedDeploy &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
     <p>&copy; 2022 RedDeploy</p>
@@ -160,3 +153,14 @@
     transition: width 0.8s, height 0.8s, transform 0.8s;
 }
 </style>
+
+<script>
+          $(document).ready(function () {
+              $("#myInput").on("keyup", function () {
+                  var value = $(this).val().toLowerCase();
+                  $("#myTable tr").filter(function () {
+                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                  });
+              });
+          });
+        </script>

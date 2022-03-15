@@ -87,7 +87,7 @@
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-receipt-cutoff"></i> Ventas</h5>
             <p class="card-text">Revisar las ventas realizadas en el sistema.</p>
-            <a href="venta_gral.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
+            <a href="catalogo.php?id=1" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
           </div>
         </div>
       </div><!-- /.col-lg-4 -->
@@ -97,7 +97,7 @@
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-geo-fill"></i> Envíos</h5>
             <p class="card-text">Revisar el estatus de los envíos por paquetería.</p>
-            <a href="rastreo_envios.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
+            <a href="#" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
           </div>
         </div>
       </div><!-- /.col-lg-4 -->
@@ -107,7 +107,7 @@
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-cloud-plus-fill"></i> Cargar catálogo</h5>
             <p class="card-text">Cargar catálogo de productos en el sistema.</p>
-            <a href="revision_catalogo.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
+            <a href="#" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
           </div>
         </div>
       </div><!-- /.col-lg-4 -->
@@ -117,7 +117,7 @@
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-door-open-fill"></i> Salir</h5>
             <p class="card-text">Salir del sistema.</p>
-            <a href="prcd/sort.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+            <a href="#" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
           </div>
         </div>
       </div><!-- /.col-lg-4 -->

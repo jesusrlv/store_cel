@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-03-2022 a las 22:26:48
+-- Tiempo de generación: 15-03-2022 a las 22:49:13
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -152,7 +152,7 @@ CREATE TABLE `venta_gral` (
   `cantidad` int(11) NOT NULL,
   `precio` int(11) NOT NULL,
   `fecha_venta` date NOT NULL,
-  `nombre` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `direccion` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `telefono` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -169,13 +169,15 @@ CREATE TABLE `venta_gral` (
 --
 
 INSERT INTO `venta_gral` (`id`, `cantidad`, `precio`, `fecha_venta`, `nombre`, `direccion`, `telefono`, `email`, `tarjeta`, `nombre_tarjeta`, `expira_mes`, `expira_annio`, `clave_rastreo_int`, `clave_rastreo_ext`) VALUES
-(1, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', '0', 'Jesus R', '24', '09', '8f3ak2ug8', NULL),
-(2, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '99x8t9pvr', NULL),
-(3, 850, 4, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', 'v5b9wrogc', NULL),
-(4, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 'vudtv03fq', NULL),
-(5, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5cew07b0n', NULL),
-(6, 4, 700, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '77lz5ocv5', NULL),
-(7, 5, 800, '2022-03-02', 0, 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 't3jxopyg7', NULL);
+(1, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', '0', 'Jesus R', '24', '09', '8f3ak2ug8', NULL),
+(2, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '99x8t9pvr', NULL),
+(3, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', 'v5b9wrogc', NULL),
+(4, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 'vudtv03fq', NULL),
+(5, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5cew07b0n', NULL),
+(6, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '77lz5ocv5', NULL),
+(7, 5, 800, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 't3jxopyg7', NULL),
+(8, 3, 1100, '2022-03-15', '0', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '8moue73zq', NULL),
+(9, 3, 1100, '2022-03-15', 'JESÃšS RODOLFO LEAÃ‘OS VILLEGAS', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '3myeslnks', NULL);
 
 -- --------------------------------------------------------
 
@@ -247,7 +249,13 @@ INSERT INTO `venta_individual` (`id`, `producto`, `fecha_venta`, `venta_gral`) V
 (50, 'Mate 20 Lite', '2022-03-02', 't3jxopyg7'),
 (51, 'Protector Samsung S30/S21', '2022-03-02', 't3jxopyg7'),
 (52, 'Protector iPhone XS Max', '2022-03-02', 't3jxopyg7'),
-(53, 'Protector Samsung S30/S21', '2022-03-02', 't3jxopyg7');
+(53, 'Protector Samsung S30/S21', '2022-03-02', 't3jxopyg7'),
+(54, 'iPhone 11 (6.1)', '2022-03-15', '8moue73zq'),
+(55, 'Protector Samsung S30/S21', '2022-03-15', '8moue73zq'),
+(56, 'iPhone 7/8 Plus', '2022-03-15', '8moue73zq'),
+(57, 'iPhone 11 (6.1)', '2022-03-15', '3myeslnks'),
+(58, 'Protector Samsung S30/S21', '2022-03-15', '3myeslnks'),
+(59, 'iPhone 7/8 Plus', '2022-03-15', '3myeslnks');
 
 --
 -- Índices para tablas volcadas
@@ -333,13 +341,13 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `venta_gral`
 --
 ALTER TABLE `venta_gral`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_individual`
 --
 ALTER TABLE `venta_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
