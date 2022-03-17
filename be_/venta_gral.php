@@ -48,10 +48,10 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-           <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
+           <a class="nav-link" aria-current="page" href="dashboard.php"><i class="bi bi-house-fill"></i> Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="catalogo.php?id=1"><i class="bi bi-receipt-cutoff"></i> Ventas</a>
+            <a class="nav-link active" href="venta_gral.php"><i class="bi bi-receipt-cutoff"></i> Ventas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Envíos</a>
@@ -112,14 +112,43 @@
             echo'<td>'.$x.'</td>';
             echo'<td>'.$row_sql['fecha_venta'].'</td>';
             echo'<td class="text-center">'.$row_sql['cantidad'].'</td>';
-            echo'<td class="text-center">'.$row_sql['precio'].'</td>';
+            echo'<td class="text-center">$'.$row_sql['precio'].'</td>';
             echo'<td class="text-center">'.$row_sql['nombre'].'</td>';
             echo'<td>'.$row_sql['direccion'].'</td>';
             echo'<td class="text-center">'.$row_sql['telefono'].'</td>';
             echo'<td class="text-center">'.$row_sql['email'].'</td>';
             echo'<td class="text-center">'.$row_sql['clave_rastreo_int'].'</td>';
-            echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
-            echo'<td class="text-center"><a href="" type="button" class="btn btn-primary btn-sm"><i class="bi bi-clipboard"></i> Detalles</a></td>';
+            if(!$row_sql['clave_rastreo_ext']){
+              echo'<td class="text-center"><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row_sql['id'].'"><i class="bi bi-plus-circle-dotted"></i> Clave</button></td>';
+              echo'<div class="modal fade" id="exampleModal'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel'.$row_sql['id'].'" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar clave de rastreo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <form action="../query/clave_rastreo.php" method="post">
+                  <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input name="clave_rastreo_int" value="'.$row_sql['clave_rastreo_int'].'">
+                        <input type="text" name="clave_rastreo_ext" class="form-control" placeholder="Clave de rastreo" aria-label="Clave de rastreo" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" type="submit" id="button-addon2"><i class="bi bi-plus-circle-dotted"></i> Agregar</button>
+                      
+                    </div>
+                  </div>
+                  </form>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>';
+            }
+            else{
+              echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
+            }
+            // echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
+            echo'<td class="text-center"><a href="venta_individual.php?venta='.$row_sql['clave_rastreo_int'].'" type="button" class="btn btn-primary btn-sm"><i class="bi bi-clipboard"></i> Detalles</a></td>';
             echo'</tr>';
           }
         ?>
@@ -144,6 +173,10 @@
   </body>
 </html>
 
+<!-- modal -->
+
+<!-- modal -->
+
 <style>
   #hOver:hover {
     border: 1px solid #ffc107;
@@ -153,14 +186,14 @@
     transition: width 0.8s, height 0.8s, transform 0.8s;
 }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-          $(document).ready(function () {
-              $("#myInput").on("keyup", function () {
-                  var value = $(this).val().toLowerCase();
-                  $("#myTable tr").filter(function () {
-                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                  });
-              });
-          });
-        </script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+  </script>
