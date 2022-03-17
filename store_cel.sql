@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-03-2022 a las 22:49:13
+-- Tiempo de generación: 17-03-2022 a las 22:24:48
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -54,8 +54,7 @@ CREATE TABLE `envios` (
   `fecha_registro` date NOT NULL,
   `compania` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `fecha_llegada` date NOT NULL,
-  `venta_general` int(11) NOT NULL,
-  `id_envio` int(11) NOT NULL COMMENT 'id de la persona que envio',
+  `id_envio` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT 'id de la persona que envio',
   `costo_envio` int(11) NOT NULL,
   `codigo_envio_interno` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `codigo_envio_externo` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -65,11 +64,11 @@ CREATE TABLE `envios` (
 -- Volcado de datos para la tabla `envios`
 --
 
-INSERT INTO `envios` (`id`, `fecha_registro`, `compania`, `fecha_llegada`, `venta_general`, `id_envio`, `costo_envio`, `codigo_envio_interno`, `codigo_envio_externo`) VALUES
-(1, '2022-02-01', 'Aeropostal', '2022-02-04', 5000, 1, 75, 'C4R6TR433', 'AER01022022'),
-(2, '2022-02-02', 'DHL', '2022-02-04', 7000, 2, 90, 'C4R6TR477', 'C4R6TR00'),
-(3, '2022-02-03', 'Paquete express', '2022-02-05', 4000, 3, 0, 'ZZR6TR433', 'VDC4R6TR'),
-(4, '2022-03-02', 'DHL', '2022-03-03', 1, 2, 1000, 't3jxopyg7', '334-998-65');
+INSERT INTO `envios` (`id`, `fecha_registro`, `compania`, `fecha_llegada`, `id_envio`, `costo_envio`, `codigo_envio_interno`, `codigo_envio_externo`) VALUES
+(1, '2022-02-01', 'Aeropostal', '2022-02-04', '1', 75, 'C4R6TR433', 'AER01022022'),
+(2, '2022-02-02', 'DHL', '2022-02-04', '2', 90, 'C4R6TR477', 'C4R6TR00'),
+(3, '2022-02-03', 'Paquete express', '2022-02-05', '3', 0, 'ZZR6TR433', 'VDC4R6TR'),
+(4, '2022-03-02', 'DHL', '2022-03-03', '2', 1000, 't3jxopyg7', '334-998-65');
 
 -- --------------------------------------------------------
 
@@ -176,7 +175,7 @@ INSERT INTO `venta_gral` (`id`, `cantidad`, `precio`, `fecha_venta`, `nombre`, `
 (5, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5cew07b0n', NULL),
 (6, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '77lz5ocv5', NULL),
 (7, 5, 800, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 't3jxopyg7', NULL),
-(8, 3, 1100, '2022-03-15', '0', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '8moue73zq', NULL),
+(8, 3, 1100, '2022-03-15', '0', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '8moue73zq', ''),
 (9, 3, 1100, '2022-03-15', 'JESÃšS RODOLFO LEAÃ‘OS VILLEGAS', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '3myeslnks', NULL);
 
 -- --------------------------------------------------------
