@@ -32,7 +32,6 @@
       }
     </style>
 
-    
     <!-- Custom styles for this template -->
     <link href="../carousel.css" rel="stylesheet">
   </head>
@@ -166,16 +165,10 @@
   </footer>
 </main>
 
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
   </body>
 </html>
-
-<!-- modal -->
-
-<!-- modal -->
 
 <style>
   #hOver:hover {
