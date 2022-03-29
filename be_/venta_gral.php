@@ -131,25 +131,23 @@
                       
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-truck"></i></span>
-                      <input type="text" class="form-control" placeholder="Ingrese compañía" aria-label="Ingrese compañía" aria-describedby="basic-addon1" required>
+                      <input type="text" name="compania" class="form-control" placeholder="Ingrese compañía" aria-label="Ingrese compañía" aria-describedby="basic-addon1" required>
                     </div>
-                   
-                   
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-check-fill"></i></span>
+                      <input type="date" name="fecha_envio" class="form-control" placeholder="Ingrese compañía" aria-label="Ingrese compañía" aria-describedby="basic-addon1" required>
+                    </div>
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                      <input type="text" class="form-control" placeholder="Nombre persona que envía" aria-label="Nombre persona que envía" aria-describedby="basic-addon1" required>
+                      <input type="text" name="persona_envia" class="form-control" placeholder="Nombre persona que envía" aria-label="Nombre persona que envía" aria-describedby="basic-addon1" required>
                     </div>
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-send-fill"></i></span>
+                      <span class="input-group-text bg-warning" id="basic-addon1"><i class="bi bi-send-fill"></i></span>
                       <input type="text" name="clave_rastreo_int" value="'.$row_sql['clave_rastreo_int'].'" class="form-control" placeholder="Costro de envío" aria-label="Costro de envío" aria-describedby="basic-addon1" READONLY>
                     </div>
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-coin"></i></span>
-                      <input type="number" class="form-control" placeholder="Costo de envío" aria-label="Costo de envío" aria-describedby="basic-addon1" required>
-                    </div>
-                    <div class="input-group mb-3">
-                      <span class="input-group-text bg-warning" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
-                      <input type="text" class="form-control" placeholder="Código interno de rastreo" aria-label="Código interno de rastreo" aria-describedby="basic-addon1" required>
+                      <input type="text" name="costo_envio" class="form-control" placeholder="Costo de envío" aria-label="Costo de envío" aria-describedby="basic-addon1" required>
                     </div>
                     
                     <div class="input-group mb-3">
@@ -167,7 +165,7 @@
             </div>';
             }
             else{
-              echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
+              echo'<td class="text-center"><a href="revision_envio.php?id='.$row_sql['clave_rastreo_ext'].'" style="text-decoration: none;"><i class="bi bi-eye-fill"></i> '.$row_sql['clave_rastreo_ext'].'</a></td>';
             }
             // echo'<td class="text-center">'.$row_sql['clave_rastreo_ext'].'</td>';
             echo'<td class="text-center"><a href="venta_individual.php?venta='.$row_sql['clave_rastreo_int'].'" type="button" class="btn btn-primary btn-sm"><i class="bi bi-clipboard"></i> Detalles</a></td>';
