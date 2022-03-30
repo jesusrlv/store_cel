@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-03-2022 a las 22:24:48
+-- Tiempo de generación: 30-03-2022 a las 23:54:04
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -54,8 +54,8 @@ CREATE TABLE `envios` (
   `fecha_registro` date NOT NULL,
   `compania` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `fecha_llegada` date NOT NULL,
-  `id_envio` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT 'id de la persona que envio',
-  `costo_envio` int(11) NOT NULL,
+  `id_envio` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'id de la persona que envio',
+  `costo_envio` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `codigo_envio_interno` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `codigo_envio_externo` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -65,10 +65,9 @@ CREATE TABLE `envios` (
 --
 
 INSERT INTO `envios` (`id`, `fecha_registro`, `compania`, `fecha_llegada`, `id_envio`, `costo_envio`, `codigo_envio_interno`, `codigo_envio_externo`) VALUES
-(1, '2022-02-01', 'Aeropostal', '2022-02-04', '1', 75, 'C4R6TR433', 'AER01022022'),
-(2, '2022-02-02', 'DHL', '2022-02-04', '2', 90, 'C4R6TR477', 'C4R6TR00'),
-(3, '2022-02-03', 'Paquete express', '2022-02-05', '3', 0, 'ZZR6TR433', 'VDC4R6TR'),
-(4, '2022-03-02', 'DHL', '2022-03-03', '2', 1000, 't3jxopyg7', '334-998-65');
+(8, '2022-03-29', 'DHL2', '2022-04-09', 'Jesus Rodolfo', '360', '2', '33-999008-009-ZM'),
+(9, '2022-03-30', 'Estafeta', '2022-04-04', 'JesusR L', '450.18', '8', '336td-zac-MX-1'),
+(10, '2022-03-30', 'Estafeta', '2022-03-24', 'Jesus Rodolfo L', '800', 'v7q58lmqg', 'EST-34455-90-ZMX');
 
 -- --------------------------------------------------------
 
@@ -97,10 +96,10 @@ CREATE TABLE `producto` (
   `precio` int(11) NOT NULL,
   `imagen` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `cantidad` int(11) NOT NULL,
-  `modelo` int(11) NOT NULL,
-  `total_vendido` int(11) NOT NULL,
-  `codigo` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `catalogo` int(11) NOT NULL
+  `modelo` int(11) DEFAULT NULL,
+  `total_vendido` int(11) DEFAULT NULL,
+  `codigo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `catalogo` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -168,15 +167,16 @@ CREATE TABLE `venta_gral` (
 --
 
 INSERT INTO `venta_gral` (`id`, `cantidad`, `precio`, `fecha_venta`, `nombre`, `direccion`, `telefono`, `email`, `tarjeta`, `nombre_tarjeta`, `expira_mes`, `expira_annio`, `clave_rastreo_int`, `clave_rastreo_ext`) VALUES
-(1, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', '0', 'Jesus R', '24', '09', '8f3ak2ug8', NULL),
-(2, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '99x8t9pvr', NULL),
-(3, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', 'v5b9wrogc', NULL),
-(4, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 'vudtv03fq', NULL),
-(5, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5cew07b0n', NULL),
-(6, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '77lz5ocv5', NULL),
-(7, 5, 800, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', 't3jxopyg7', NULL),
-(8, 3, 1100, '2022-03-15', '0', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '8moue73zq', ''),
-(9, 3, 1100, '2022-03-15', 'JESÃšS RODOLFO LEAÃ‘OS VILLEGAS', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '3myeslnks', NULL);
+(1, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', '0', 'Jesus R', '24', '09', '1', ''),
+(2, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '2', '33-999008-009-ZMX'),
+(3, 850, 4, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'sdfasdf@fdsafd.net', 'XXXXXXXXXXX3844', 'Jesus R', '24', '09', '3', ''),
+(4, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '4', ''),
+(5, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '5', ''),
+(6, 4, 700, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '6', ''),
+(7, 5, 800, '2022-03-02', '0', 'CALLE CERRO DE LA ARAÃ‘A 143 FRACC COLINAS DEL PADRE 98085', '4924921515', 'dsddsd@dsdfs.net', 'XXXXXXXXXXX3444', 'Jesus R', '24', '09', '7', ''),
+(8, 3, 1100, '2022-03-15', '0', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '8', '336td-zac-MX-1'),
+(9, 3, 1100, '2022-03-15', 'JESÃšS RODOLFO LEAÃ‘OS VILLEGAS', 'Direccion conocida', '99999999', 'dskjdsjs@fjfjf.net', 'XXXXXXXXXXX3434', 'Geranios', '02', '03', '9', ''),
+(10, 3, 850, '2022-03-30', 'RODOLFO DE JESÃšS LEAÃ‘OS V', 'AND TULIPANES 12 A COL EL CARMEN GUADALUPE, ZAC', '4927951930', 'jesusrlvrojo@gmail.com', 'XXXXXXXXXXX2223', 'Jesus R', '09', '21', 'v7q58lmqg', 'EST-34455-90-ZMX');
 
 -- --------------------------------------------------------
 
@@ -254,7 +254,10 @@ INSERT INTO `venta_individual` (`id`, `producto`, `fecha_venta`, `venta_gral`) V
 (56, 'iPhone 7/8 Plus', '2022-03-15', '8moue73zq'),
 (57, 'iPhone 11 (6.1)', '2022-03-15', '3myeslnks'),
 (58, 'Protector Samsung S30/S21', '2022-03-15', '3myeslnks'),
-(59, 'iPhone 7/8 Plus', '2022-03-15', '3myeslnks');
+(59, 'iPhone 7/8 Plus', '2022-03-15', '3myeslnks'),
+(60, 'Protector Samsung S30/S21', '2022-03-30', 'v7q58lmqg'),
+(61, 'iPhone 11 (6.1)', '2022-03-30', 'v7q58lmqg'),
+(62, 'A51', '2022-03-30', 'v7q58lmqg');
 
 --
 -- Índices para tablas volcadas
@@ -316,7 +319,7 @@ ALTER TABLE `catalogo`
 -- AUTO_INCREMENT de la tabla `envios`
 --
 ALTER TABLE `envios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `modelo`
@@ -340,13 +343,13 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `venta_gral`
 --
 ALTER TABLE `venta_gral`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `venta_individual`
 --
 ALTER TABLE `venta_individual`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
