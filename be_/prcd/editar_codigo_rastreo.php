@@ -7,17 +7,16 @@
 <?php
 include('../../query/qconn/qc.php');
 
-$id = $_POST['id'];
-$compania = $_POST['compania'];
-$fecha_llegada = $_POST['fecha_entrega'];
-$persona_envia = $_POST['persona_envia'];
-$costo = $_POST['costo'];
-$id_int = $_POST['codigo_interno'];
 $id_ext = $_POST['codigo_externo'];
+$id_ext2 = $_POST['codigo_externo2'];
 
-    $sql = "UPDATE envios SET compania = '$compania', fecha_llegada = '$fecha_llegada', id_envio = '$persona_envia', costo_envio = '$costo', codigo_envio_interno = '$id_int', codigo_envio_externo = '$id_ext' WHERE id = '$id'";
+    $sql = "UPDATE envios SET codigo_envio_externo = '$id_ext' WHERE codigo_envio_externo = '$id_ext2'";
     $resultado_sql = $conn->query($sql);
-    if($resultado_sql){
+
+    $sql2 = "UPDATE venta_gral SET clave_rastreo_ext = '$id_ext' WHERE clave_rastreo_ext  = '$id_ext2'";
+    $resultado_sql2 = $conn->query($sql2);
+
+    if($resultado_sql2){
         
         echo "<script type=\"text/javascript\">
         Swal.fire({

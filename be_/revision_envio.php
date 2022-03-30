@@ -117,7 +117,7 @@
             echo'<td class="text-center">'.$row_sql['id_envio'].'</td>';
             echo'<td class="text-center">'.$row_sql['costo_envio'].'</td>';
             echo'<td class="text-center">'.$row_sql['codigo_envio_interno'].'</td>';
-            echo'<td class="text-center">'.$row_sql['codigo_envio_externo'].'</td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#editCode" style="text-decoration: none;"><i class="bi bi-pencil-square"></i> '.$row_sql['codigo_envio_externo'].'</a></td>';
             echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><span class="badge bg-primary"><i class="bi bi-pencil-square"></i> Editar</span></a></td>';
             echo'</tr>';
 
@@ -179,6 +179,34 @@
                   </form>
 
                   </div>
+                </div>
+              </div>
+            </div>';
+
+            echo'<!-- Modal -->
+            <div class="modal fade" id="editCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-pencil-square"></i> Editar código de rastreo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <form action="prcd/editar_codigo_rastreo.php" method="post">
+                    <div class="input-group mb-3">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" title="Código rastreo paquetería">
+                        <i class="bi bi-journal-code"></i>
+                      </button>
+                      
+                      <input type="text" class="form-control" placeholder="Código" aria-label="Código" aria-describedby="basic-addon1" value="'.$row_sql['codigo_envio_externo'].'" name="codigo_externo">
+                      <input type="text" class="form-control" placeholder="Código" aria-label="Código" aria-describedby="basic-addon1" value="'.$row_sql['codigo_envio_externo'].'" name="codigo_externo2" hidden>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                  </form>
                 </div>
               </div>
             </div>';

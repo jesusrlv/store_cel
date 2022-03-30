@@ -14,8 +14,7 @@ include('qconn/qc.php');
             while($row_sql_envio = $resultado_sql_busqueda->fetch_assoc()){
                 echo '<tbody>
                 <tr>
-                <th scope="row" class="table-dark">'.$row_sql_envio['compania'].'</th>
-                <td class="table-primary">'.$row_sql_envio['fecha_registro'].'</td>
+                <th scope="row" class="table-danger">'.$row_sql_envio['compania'].'</th>
                 <td class="table-primary">'.$row_sql_envio['fecha_llegada'].'</td>
                 <td class="table-primary">$ '.$row_sql_envio['costo_envio'].'</td>
                 <td class="table-primary">'.$row_sql_envio['codigo_envio_interno'].'</td>

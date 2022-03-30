@@ -104,7 +104,6 @@
                     <thead class="bg-dark text-light">
                         <tr>
                         <th scope="col">Compañía</th>
-                        <th scope="col">Fecha envío</th>
                         <th scope="col">Fecha llegada</th>
                         <th scope="col">Costo envío</th>
                         <th scope="col">Código de producto</th>

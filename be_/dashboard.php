@@ -91,23 +91,23 @@
           </div>
         </div>
       </div><!-- /.col-lg-4 -->
-      <div class="col-lg-6">
+      <!-- <div class="col-lg-6">
         <div class="card text-center text-light bg-dark" style="width: 100%;" id="hOver">
-          <!-- <img src="assets/brand/img/cel6.jpg" class="card-img-top" alt="..."> -->
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-geo-fill"></i> Envíos</h5>
             <p class="card-text">Revisar el estatus de los envíos por paquetería.</p>
             <a href="rastreo_envios.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
           </div>
         </div>
-      </div><!-- /.col-lg-4 -->
+      </div> -->
+      <!-- /.col-lg-4 -->
       <div class="col-lg-6">
         <div class="card text-center text-light bg-dark" style="width: 100%;" id="hOver">
           <!-- <img src="assets/brand/img/cel5.jpg" class="card-img-top" alt="..."> -->
           <div class="card-body">
             <h5 class="card-title"><i class="bi bi-cloud-plus-fill"></i> Cargar catálogo</h5>
             <p class="card-text">Cargar catálogo de productos en el sistema.</p>
-            <a href="revision_catalogo.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
+            <a href="catalogo.php" class="btn btn-outline-light"><i class="bi bi-box-arrow-right"></i> Acceder a la sección</a>
           </div>
         </div>
       </div><!-- /.col-lg-4 -->
