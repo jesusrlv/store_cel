@@ -152,31 +152,50 @@
         <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-plus-circle"></i> Agregar producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="prcd/agregar_categoria.php" method="post" enctype="multipart/form-data">
       <div class="modal-body">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+            <input type="text" name="nombre" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Descripción</span>
-            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+            <input type="text" name="descripcion" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Precio</span>
-            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+            <input type="text" name="precio" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Imagen</span>
-            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+            <!-- <span class="input-group-text" id="basic-addon1">Imagen</span>
+            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1"> -->
+            <div class="input-group mb-1">
+              <label class="input-group-text" for="inputGroupFile01"><i class="bi bi-image"></i></label>
+              <input type="file" name="foto" class="form-control" id="inputGroupFile01">
+            </div>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Cantidad</span>
-            <input type="text" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+            <input type="text" name="cantidad" class="form-control" placeholder="..." aria-label="..." aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Tipo catálogo</span>
+              <select class="form-select" name="tipo_catalogo" aria-label="Default select example">
+                <option selected>Selecciona la categoría del producto</option>
+                <? 
+                $sqlCategoria = "SELECT * FROM catalogo";
+                $resultado_categoria_sql = $conn->query($sqlCategoria);
+                while($rowCategoria = $resultado_categoria_sql->fetch_assoc()){
+                  echo '<option value="'.$rowCategoria['id'].'">'.$rowCategoria['nombre_catalogo'].'</option>';
+                }
+                ?>
+              </select>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-cloud-upload-fill"></i> Cerrar</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-x-square-fill"></i> Guardar</button>
+      </form>
       </div>
     </div>
   </div>
