@@ -104,6 +104,7 @@
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Cantidad</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Total vendido</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-activity"></i> Acción</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-radioactive"></i> Eliminar</small></th>
         
         </tr>
       </thead>
@@ -120,8 +121,72 @@
             echo'<td class="text-center">$'.$row_sql['precio'].'</td>';
             echo'<td class="text-center">'.$row_sql['cantidad'].'</td>';
             echo'<td class="text-center">'.$row_sql['total_vendido'].'</td>';
-            echo'<td class="text-center"><a href="#"><span class="badge bg-primary"><i class="bi bi-pencil-square"></i> Editar</span></a></td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row_sql['id'].'"><span class="badge bg-primary"><i class="bi bi-pencil-square"></i> Editar</span></a></td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#deleteArticulo'.$row_sql['id'].'"><span class="badge bg-danger"><i class="bi bi-trash-fill"></i> Eliminar</span></a></td>';
             echo'</tr>';
+
+            echo'<!-- Modal Actualizar-->
+            <div class="modal fade" id="exampleModal'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar artículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <input value="'.$row_sql['id'].'" hidden>
+
+                    <div class="text-center mb-3">
+                      <img src="../assets/brand/img/catalogo/'.$row_sql['imagen'].'" class="rounded" alt="" width="200" height="" style="object-fit: cover; object-position:right; background-repeat: no-repeat;">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Nombre</span>
+                      <input type="text" class="form-control" value="'.$row_sql['nombre'].'" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Descripción</span>
+                      <input type="text" class="form-control" value="'.$row_sql['descripcion'].'" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Precio</span>
+                      <input type="text" class="form-control" value="'.$row_sql['precio'].'" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Cantidad</span>
+                      <input type="text" class="form-control" value="'.$row_sql['cantidad'].'" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Total vendido</span>
+                      <input type="text" class="form-control" value="'.$row_sql['total_vendido'].'" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-square-fill"></i> Cerrar</button>
+                    <button type="button" class="btn btn-primary"><i class="bi bi-save-fill"></i> Actualizar</button>
+                  </div>
+                </div>
+              </div>
+            </div>';
+
+            echo '<!-- Modal Eliminar-->
+            <div class="modal fade bg-danger" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-trash-fill"></i> Eliminar artículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <strong>¿Desea eliminar este artículo?</strong>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">NO</button>
+                    <a href="#" type="button" class="btn btn-danger">ELIMINAR</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ';
           }
         ?>
       </tbody>
