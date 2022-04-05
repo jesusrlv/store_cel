@@ -133,6 +133,8 @@
                     <h5 class="modal-title" id="exampleModalLabel">Editar artículo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
+                  
+                  <form action="" method="post">
                   <div class="modal-body">
                     <input value="'.$row_sql['id'].'" hidden>
 
@@ -162,8 +164,9 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-square-fill"></i> Cerrar</button>
-                    <button type="button" class="btn btn-primary"><i class="bi bi-save-fill"></i> Actualizar</button>
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-save-fill"></i> Actualizar</button>
                   </div>
+                  </form>
                 </div>
               </div>
             </div>';

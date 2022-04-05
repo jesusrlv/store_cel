@@ -7,47 +7,21 @@
 <?php
 include('../../query/qconn/qc.php');
 
+$id = $_POST['id'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
 $precio = $_POST['precio'];
-// $foto = $_POST['foto'];
 $cantidad = $_POST['cantidad'];
 $tipo_catalogo = $_POST['tipo_catalogo'];
 $link= 'foto';
 
-function generarCodigo($longitud) {
-    $key = '';
-    $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
-    $max = strlen($pattern)-1;
-    for($i=0;$i < $longitud;$i++) $key .= $pattern{mt_rand(0,$max)};
-    return $key;
-}   
-$codigo = generarCodigo(9); // genera un código de 9 caracteres de longitud.
-
-$fileName = $_FILES["foto"]["name"]; // The file name
-$fileTmpLoc = $_FILES["foto"]["tmp_name"]; // File in the PHP tmp folder
-$fileType = $_FILES["foto"]["type"]; // The type of file it is
-$fileSize = $_FILES["foto"]["size"]; // File size in bytes
-$fileErrorMsg = $_FILES["foto"]["error"]; // 0 for false... and 1 for true
-if (!$fileTmpLoc) { // if file not chosen
-    echo "ERROR: Please browse for a file before clicking the upload button.";
-    exit();
-}
-
-
-$archivo_ext=$_FILES['foto']['name'];
-$extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
-
-    if(move_uploaded_file($_FILES["foto"]["tmp_name"],"../../assets/brand/img/catalogo/".$link.'_'.$codigo.'.'.$extension)){
-    echo "$fileName carga completa";
-    
-    $ruta = $link.'_'.$codigo.'_'.$tipo_catalogo.'.'.$extension;
-
     // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
     $sqlinsert= "INSERT INTO producto (nombre,descripcion,precio,imagen,cantidad,catalogo) 
     VALUES('$nombre','$descripcion','$precio','$ruta','$cantidad','$tipo_catalogo')";
-    $resultado2= $conn->query($sqlinsert);
+    
+    $sqlUpdate = "UPDATE producto SET nombre='$nombre',descripcion='$descripcion',precio='$precio',cantidad='',catalogo='$tipo_catalogo' WHERE id='$id'";
 
+    $resultado2= $conn->query($sqlinsert);
 
     if($resultado2){
         
@@ -64,9 +38,7 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
         }
     
     
-} else {
-    echo "move_uploaded_file function failed";
-}
+
 
 
     
