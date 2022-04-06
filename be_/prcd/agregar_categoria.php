@@ -38,7 +38,7 @@ if (!$fileTmpLoc) { // if file not chosen
 $archivo_ext=$_FILES['foto']['name'];
 $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
 
-    if(move_uploaded_file($_FILES["foto"]["tmp_name"],"../../assets/brand/img/catalogo/".$link.'_'.$codigo.'.'.$extension)){
+    if(move_uploaded_file($_FILES["foto"]["tmp_name"],"../../assets/brand/img/catalogo/".$link.'_'.$codigo.'_'.$tipo_catalogo.'.'.$extension)){
     echo "$fileName carga completa";
     
     $ruta = $link.'_'.$codigo.'_'.$tipo_catalogo.'.'.$extension;
