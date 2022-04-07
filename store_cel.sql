@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 30-03-2022 a las 23:54:04
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.3.1
+-- Tiempo de generación: 07-04-2022 a las 04:50:54
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -99,25 +98,30 @@ CREATE TABLE `producto` (
   `modelo` int(11) DEFAULT NULL,
   `total_vendido` int(11) DEFAULT NULL,
   `codigo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `catalogo` int(11) DEFAULT NULL
+  `catalogo` int(11) DEFAULT NULL,
+  `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `cantidad`, `modelo`, `total_vendido`, `codigo`, `catalogo`) VALUES
-(1, 'Protector Samsung S30/S21', 'Descripción del producto 01', 100, 'producto_01.jpg', 10, 1, 0, 'protector1', 1),
-(2, 'Protector iPhone XS Max', 'Descripción del producto 02', 300, 'producto_02.jpg', 10, 2, 0, 'protector2', 1),
-(3, 'iPhone 11 (6.1)', 'Descripción del producto 03', 400, 'producto_03.jpg', 30, 1, 0, 'protector3', 1),
-(4, 'Mate 20 Lite', 'Descripción del producto 04', 150, 'producto_04.jpg', 10, 1, 0, 'protector4', 1),
-(5, 'P40 Lite Nova 6 SE', 'Descripción del producto 05', 200, 'producto_05.jpg', 60, 1, 0, 'protector4', 1),
-(6, 'Huawei Y9S', 'Descripción del producto 06', 300, 'producto_06.jpg', 10, 1, 0, 'protector5', 1),
-(7, 'A51', 'Descripción del producto 07', 350, 'producto_07.jpg', 10, 1, 0, 'protector6', 1),
-(8, 'iPhone 7/8 Plus', 'Descripción del producto 08', 600, 'producto_08.jpg', 10, 1, 0, 'protector7', 1),
-(9, 'producto_09.jpg', 'Descripción del producto 09', 100, 'producto_09.jpg', 10, 1, 0, 'protector8', 1),
-(10, 'iPhone XS Max', 'Descripción del producto 010', 500, 'producto_010.jpg', 10, 1, 0, 'protector9', 1),
-(11, 'Samsung A10S', 'Descripción del producto 011', 100, 'producto_011.jpg', 10, 1, 0, 'protector10', 1);
+INSERT INTO `producto` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `cantidad`, `modelo`, `total_vendido`, `codigo`, `catalogo`, `activo`) VALUES
+(1, 'Protector Samsung S30/S21', 'Descripción del producto 01', 120, 'producto_01.jpg', 18, 1, 0, 'protector1', 1, 1),
+(2, 'Protector iPhone XS Max', 'Descripción del producto 02', 300, 'producto_02.jpg', 10, 2, 0, 'protector2', 1, 1),
+(3, 'iPhone 11 (6.1)', 'Descripción del producto 03', 450, 'producto_03.jpg', 36, 1, 0, 'protector3', 1, 1),
+(4, 'Mate 20 Lite', 'Descripción del producto 04', 150, 'producto_04.jpg', 10, 1, 0, 'protector4', 1, 1),
+(5, 'P40 Lite Nova 6 SE', 'Descripción del producto 05', 200, 'producto_05.jpg', 60, 1, 0, 'protector4', 1, 1),
+(6, 'Huawei Y9S', 'Descripción del producto 06', 300, 'producto_06.jpg', 10, 1, 0, 'protector5', 1, 1),
+(7, 'A51', 'Descripción del producto 07', 350, 'producto_07.jpg', 10, 1, 0, 'protector6', 1, 1),
+(8, 'iPhone 7/8 Plus', 'Descripción del producto 08', 600, 'producto_08.jpg', 10, 1, 0, 'protector7', 1, 1),
+(9, 'producto_09.jpg', 'Descripción del producto 09', 100, 'producto_09.jpg', 10, 1, 0, 'protector8', 1, 1),
+(10, 'iPhone XS Max', 'Descripción del producto 010', 500, 'producto_010.jpg', 10, 1, 0, 'protector9', 1, 1),
+(11, 'Samsung A10S', 'Descripción del producto 011', 100, 'producto_011.jpg', 10, 1, 0, 'protector10', 1, 1),
+(12, 'iPhone 13', 'iPhone 13', 4000, 'foto_9vhjhhlxd_1.jpg', 90, NULL, NULL, NULL, 1, 1),
+(13, 'iPhone 13 (2)', 'Descripción de iPhone 13', 10000, 'foto_cu2qasj1r_1.jpg', 90, NULL, NULL, NULL, 1, 0),
+(14, 'iPhone 13 (4)', 'Descripción de iPhone 13 4', 4000, 'foto_kz6zwvjvj_1.jpg', 54, NULL, NULL, NULL, 1, 0),
+(15, 'iPhone 13 (9)', 'iPhone 13 9', 21000, 'foto_i1uc2m96w_1.jpg', 90, NULL, NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -331,7 +335,7 @@ ALTER TABLE `modelo`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `usr`

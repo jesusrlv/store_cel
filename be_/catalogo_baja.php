@@ -74,10 +74,10 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bag-check-fill"></i> <strong>Productos activos</strong></a>
+        <a class="nav-link" aria-current="page" href="catalogo.php"><i class="bi bi-bag-check-fill"></i> Productos activos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="catalogo_baja.php"><i class="bi bi-bag-x-fill"></i> Productos dados de baja</a>
+        <a class="nav-link active" href="#"><i class="bi bi-bag-x-fill"></i> <strong>Productos dados de baja</strong></a>
       </li>
       
     </ul>
@@ -87,7 +87,7 @@
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<? include('../query/query_catalogo_backend.php'); ?>
+<? include('../query/query_catalogo_backend_baja.php'); ?>
   
   <div class="container marketing mt-5 border-bottom">
 
@@ -138,7 +138,7 @@
             echo'<td class="text-center">'.$row_sql['cantidad'].'</td>';
             echo'<td class="text-center">'.$row_sql['total_vendido'].'</td>';
             echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row_sql['id'].'"><span class="badge bg-primary"><i class="bi bi-pencil-square"></i> Editar</span></a></td>';
-            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#deleteArticulo'.$row_sql['id'].'"><span class="badge bg-warning text-dark"><i class="bi bi-trash-fill"></i> Dar de baja</span></a></td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#deleteArticulo'.$row_sql['id'].'"><span class="badge bg-info text-dark"><i class="bi bi-capslock-fill"></i> Dar de alta</span></a></td>';
             echo'</tr>';
 
             echo'<!-- Modal Actualizar-->
@@ -188,7 +188,7 @@
             </div>';
 
             echo '<!-- Modal Eliminar-->
-            <div class="modal fade bg-danger" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade bg-info" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -200,7 +200,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">NO</button>
-                    <a href="prcd/editar_activo.php?id='.$row_sql['id'].'" type="button" class="btn btn-danger"><i class="bi bi-arrow-down-circle-fill"></i> DAR DE BAJA</a>
+                    <a href="prcd/editar_activo_alta.php?id='.$row_sql['id'].'" type="button" class="btn btn-primary"><i class="bi bi-capslock-fill"></i> DAR DE ALTA</a>
                   </div>
                 </div>
               </div>

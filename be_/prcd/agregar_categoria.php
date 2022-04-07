@@ -14,6 +14,7 @@ $precio = $_POST['precio'];
 $cantidad = $_POST['cantidad'];
 $tipo_catalogo = $_POST['tipo_catalogo'];
 $link= 'foto';
+$activo = 1;
 
 function generarCodigo($longitud) {
     $key = '';
@@ -44,8 +45,8 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
     $ruta = $link.'_'.$codigo.'_'.$tipo_catalogo.'.'.$extension;
 
     // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
-    $sqlinsert= "INSERT INTO producto (nombre,descripcion,precio,imagen,cantidad,catalogo) 
-    VALUES('$nombre','$descripcion','$precio','$ruta','$cantidad','$tipo_catalogo')";
+    $sqlinsert= "INSERT INTO producto (nombre,descripcion,precio,imagen,cantidad,catalogo,activo) 
+    VALUES('$nombre','$descripcion','$precio','$ruta','$cantidad','$tipo_catalogo','$activo')";
     $resultado2= $conn->query($sqlinsert);
 
 
