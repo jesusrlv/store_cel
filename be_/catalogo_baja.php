@@ -99,9 +99,9 @@
         </div>
     </div>
     <div class="col">
-        <div class="input-group mb-4 justify-content-end">
+        <!-- <div class="input-group mb-4 justify-content-end">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProducto"><i class="bi bi-plus-circle-dotted"></i> Agregar producto</button>
-        </div>
+        </div> -->
     </div>
   </div>
 
@@ -121,6 +121,7 @@
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Total vendido</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-activity"></i> Acción</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-radioactive"></i> Dar de baja</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-trash-fill"></i> Eliminar</small></th>
         
         </tr>
       </thead>
@@ -138,7 +139,8 @@
             echo'<td class="text-center">'.$row_sql['cantidad'].'</td>';
             echo'<td class="text-center">'.$row_sql['total_vendido'].'</td>';
             echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal'.$row_sql['id'].'"><span class="badge bg-primary"><i class="bi bi-pencil-square"></i> Editar</span></a></td>';
-            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#deleteArticulo'.$row_sql['id'].'"><span class="badge bg-info text-dark"><i class="bi bi-capslock-fill"></i> Dar de alta</span></a></td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#editarArticulo'.$row_sql['id'].'"><span class="badge bg-info text-dark"><i class="bi bi-capslock-fill"></i> Dar de alta</span></a></td>';
+            echo'<td class="text-center"><a href="#" data-bs-toggle="modal" data-bs-target="#deleteArticulo'.$row_sql['id'].'"><span class="badge bg-danger text-light"><i class="bi bi-trash-fill"></i> Eliminar</span></a></td>';
             echo'</tr>';
 
             echo'<!-- Modal Actualizar-->
@@ -187,8 +189,27 @@
               </div>
             </div>';
 
+            echo '<!-- Modal Editar-->
+            <div class="modal fade bg-info" id="editarArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-trash-fill"></i> Alta de artículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <strong>¿Desea dar de alta este artículo?</strong>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">NO</button>
+                    <a href="prcd/editar_activo_alta.php?id='.$row_sql['id'].'" type="button" class="btn btn-primary"><i class="bi bi-capslock-fill"></i> DAR DE ALTA</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            ';
             echo '<!-- Modal Eliminar-->
-            <div class="modal fade bg-info" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade bg-danger" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -196,11 +217,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body text-center">
-                    <strong>¿Desea dar de baja este artículo?</strong>
+                    <strong>¿Desea eliminar definitivamente este artículo?</strong>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-bs-dismiss="modal">NO</button>
-                    <a href="prcd/editar_activo_alta.php?id='.$row_sql['id'].'" type="button" class="btn btn-primary"><i class="bi bi-capslock-fill"></i> DAR DE ALTA</a>
+                    <a href="prcd/editar_activo_eliminar.php?id='.$row_sql['id'].'" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i> ELIMINAR</a>
                   </div>
                 </div>
               </div>

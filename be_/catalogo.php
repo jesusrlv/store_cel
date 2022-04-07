@@ -121,6 +121,7 @@
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Total vendido</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-activity"></i> Acción</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-radioactive"></i> Dar de baja</small></th>
+          
         
         </tr>
       </thead>
@@ -188,11 +189,11 @@
             </div>';
 
             echo '<!-- Modal Eliminar-->
-            <div class="modal fade bg-danger" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade bg-info" id="deleteArticulo'.$row_sql['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-trash-fill"></i> Eliminar artículo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-trash-fill"></i> Baja de artículo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body text-center">
