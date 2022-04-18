@@ -26,16 +26,22 @@ function generarCodigo($longitud) {
 
 $numero_general = 0;
 $cantidad = $_POST['num_prod'];
-$total_precio = $_POST['total_precio'];
+
 $nombre_completo = $_POST['nombre'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['tel'];
 $email = $_POST['email'];
+
+
+// datos para token
+$nip = $_POST['ccc'];
+$nombre_tarjeta_no_bloqueo = $_POST['nombre_tarjeta2'];
 $tarjeta = $_POST['tarjeta'];
 $nombre_tarjeta = $_POST['nombre_tarjeta'];
 $expira_mes = $_POST['expira_mes'];
 $expira_annio = $_POST['expira_annio'];
-$nip = $_POST['ccc'];
+$total_precio = $_POST['total_precio']; // para ambos datos
+
 
 
 $nombreproducto = $_POST['nombreproducto'];

@@ -74,6 +74,9 @@
             </div>
             <div class="mb-3">
               <label for="formGroupExampleInput" class="form-label"><small><i class="bi bi-credit-card-2-back"></i> Tarjeta para pago</small></label>
+              
+              <input type="text" id="tarjeta2" READONLY HIDDEN>
+              
               <div class="input-group">
                 <input type="text" class="form-control" style="width:57%" id="tarjetaNum" maxlength ="16" name="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" onkeypress="ValidaSoloNumeros()">
                 <input type="text" class="form-control" style="width:43%" width="28" id="tipoTarjeta" readonly>
@@ -139,6 +142,10 @@ function ValidaSoloNumeros() {
 
 // $('input').on('change', function() {
 $('input[id="tarjetaNum"]').on('change', function() {
+  var tarjeta = $(this).val().trim();
+
+  alert ('Número de tarjeta agregado '+ tarjeta);
+  document.getElementById("tarjeta2").value = tarjeta;
   var value = $(this).val().trim();
   
   var cardType = getCardType(value);
