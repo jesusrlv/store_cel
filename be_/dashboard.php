@@ -32,7 +32,6 @@
       }
     </style>
 
-    
     <!-- Custom styles for this template -->
     <link href="../carousel.css" rel="stylesheet">
   </head>
@@ -124,23 +123,17 @@
       
     </div><!-- /.row -->
 
-
-    <!-- START THE FEATURETTES -->
-
-    
-
-    <hr class="featurette-divider">
-
-    <!-- /END THE FEATURETTES -->
-
   </div><!-- /.container -->
 
 
   <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="#">Regresar arriba</a></p>
-    <!-- <p>&copy; 2022 RedDeploy &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
-    <p>&copy; 2022 RedDeploy</p>
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <hr class="featurette-divider">
+      <p class="float-end"><a href="#">Regresar arriba</a></p>
+      <!-- <p>&copy; 2022 RedDeploy &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+      <p>&copy; 2022 RedDeploy</p>
+    </div>
   </footer>
 </main>
 
