@@ -120,7 +120,7 @@
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Cantidad</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-123"></i> Total vendido</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-activity"></i> Acción</small></th>
-          <th scope="col" class="h6"><small><i class="bi bi-radioactive"></i> Dar de baja</small></th>
+          <th scope="col" class="h6"><small><i class="bi bi-capslock-fill"></i> Dar de alta</small></th>
           <th scope="col" class="h6"><small><i class="bi bi-trash-fill"></i> Eliminar</small></th>
         
         </tr>

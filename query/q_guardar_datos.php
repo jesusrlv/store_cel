@@ -7,7 +7,6 @@
 <?php
 include('qconn/qc.php');
 
-
 // if
 
 function generarCodigo($longitud) {
@@ -26,23 +25,19 @@ function generarCodigo($longitud) {
 
 $numero_general = 0;
 $cantidad = $_POST['num_prod'];
-
 $nombre_completo = $_POST['nombre'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['tel'];
 $email = $_POST['email'];
-
+$tarjeta = $_POST['tarjeta'];
 
 // datos para token
 $nip = $_POST['ccc'];
-$nombre_tarjeta_no_bloqueo = $_POST['nombre_tarjeta2'];
-$tarjeta = $_POST['tarjeta'];
+$tarjeta2 = $_POST['tarjeta2'];
 $nombre_tarjeta = $_POST['nombre_tarjeta'];
 $expira_mes = $_POST['expira_mes'];
 $expira_annio = $_POST['expira_annio'];
 $total_precio = $_POST['total_precio']; // para ambos datos
-
-
 
 $nombreproducto = $_POST['nombreproducto'];
 $valor = $_POST['valor'];
@@ -75,8 +70,6 @@ if($resultado_general){
     }
 
 //  end of if
-
-
 
 // https://laracasts.com/index.php/index.php/discuss/channels/general-discussion/how-to-add-multiple-same-name-input-fields-in-one-form-into-database
 // https://www.sourcecodester.com/tutorials/php/13495/php-multiple-form-inputs.html
