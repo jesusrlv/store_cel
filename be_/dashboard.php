@@ -1,3 +1,30 @@
+<?php
+session_start();
+
+if (isset($_SESSION['usr']) && isset($_SESSION['pwd'])) {
+  // if($_SESSION['perfil']==2){
+
+  // }
+  // else{
+  //   header('Location: prcd/sort.php');
+  //   die();
+  // }
+  
+} else {
+  // En caso contrario redirigimos el visitante a otra página
+
+  header('Location: prcd/sort.php');
+  die();
+}
+
+// variables de sesión
+
+    $id_sess = $_SESSION['id'];
+    $nombre_sess = $_SESSION['usr'];
+    $perfil_sess = $_SESSION['perfil'];
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
