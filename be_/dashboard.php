@@ -79,16 +79,14 @@ if (isset($_SESSION['usr']) && isset($_SESSION['pwd'])) {
           <li class="nav-item">
             <a class="nav-link" href="venta_gral.php"><i class="bi bi-receipt-cutoff"></i> Ventas</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Envíos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="envio.php"><i class="bi bi-cloud-plus-fill"></i> Catálogo</a>
+            <a class="nav-link" href="catalogo.php"><i class="bi bi-cloud-plus-fill"></i> Catálogo</a>
           </li>
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"> -->
-          <a href="prcd/sort.php" class="btn btn-outline-light" type="submit">Salir</a>
+          <a href="prcd/sort.php" class="btn btn-outline-light" type="submit"><i class="bi bi-door-open-fill"></i> Salir</a>
         </form>
       </div>
     </div>

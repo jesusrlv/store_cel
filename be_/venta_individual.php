@@ -65,7 +65,7 @@ if (isset($_SESSION['usr']) && isset($_SESSION['pwd'])) {
   <body>
     
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><i class="bi bi-phone"></i> Sistema |</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,21 +74,18 @@ if (isset($_SESSION['usr']) && isset($_SESSION['pwd'])) {
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-           <a class="nav-link" aria-current="page" href="dashboard.php"><i class="bi bi-house-fill"></i> Inicio</a>
+           <a class="nav-link" aria-current="page" href="index.html"><i class="bi bi-house-fill"></i> Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="venta_gral.php"><i class="bi bi-receipt-cutoff"></i> Ventas</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="envio.php"><i class="bi bi-geo-fill"></i> Envíos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="envio.php"><i class="bi bi-cloud-plus-fill"></i> Catálogo</a>
+            <a class="nav-link" href="catalogo.php"><i class="bi bi-cloud-plus-fill"></i> Catálogo</a>
           </li>
         </ul>
         <form class="d-flex">
-          <!-- <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"> -->
-          <a href="prcd/sort.php" class="btn btn-outline-light" type="submit">Salir</a>
+          <a href="prcd/sort.php" class="btn btn-outline-light" type="submit"><i class="bi bi-door-open-fill"></i> Salir</a>
         </form>
       </div>
     </div>
